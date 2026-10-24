@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kebun Angka</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/angka.css">
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="#belajar">🌱 Kebun Angka</a>
+  <nav id="nav">
+    <a href="#belajar">Belajar</a>
+    <a href="#hitung">Hitung</a>
+    <a href="#kuis">Kuis</a>
+  </nav>
+</header>
+<main>
+  <section id="belajar" class="stage" data-page="belajar">
+    <div class="big" id="big">
+      <button class="nav-btn" id="prev" aria-label="Angka sebelumnya">◀</button>
+      <div class="big-body">
+        <div class="numeral" id="numeral">1</div>
+        <div class="word" id="word">satu</div>
+        <div class="objects" id="objects" aria-live="polite"></div>
+        <button class="btn" id="dengar">🔊 Dengarkan</button>
+      </div>
+      <button class="nav-btn" id="next" aria-label="Angka berikutnya">▶</button>
+    </div>
+    <p class="hint">Ketuk angka untuk belajar. Ketuk gambar untuk menghitung bersama.</p>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="hitung" class="stage" data-page="hitung" hidden>
+    <h1>Ada berapa gambar ini?</h1>
+    <p class="hint">Ketuk setiap gambar untuk menghitung, lalu pilih jawabannya.</p>
+    <div class="field" id="h-field"></div>
+    <div class="options" id="h-options"></div>
+    <p class="msg" id="h-msg" role="status"></p>
+    <button class="btn" id="h-lanjut" hidden>Soal berikutnya</button>
+  </section>
+
+  <section id="kuis" class="stage" data-page="kuis" hidden>
+    <h1 id="k-judul">Dengar dan pilih angkanya</h1>
+    <div class="stars" id="k-stars" aria-label="Skor"></div>
+    <button class="btn" id="k-dengar">🔊 Dengarkan soal</button>
+    <div class="options big-opt" id="k-options"></div>
+    <p class="msg" id="k-msg" role="status"></p>
+    <button class="btn" id="k-lanjut" hidden>Lanjut</button>
+  </section>
+</main>
+<script src="js/angka.js"></script>
+</body>
+</html>

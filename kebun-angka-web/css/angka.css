@@ -1,0 +1,46 @@
+:root{--langit:#BFE9FF;--tinta:#1F2A5A;--putih:#fff;--matahari:#FFC93C;--daun:#3DDC97}
+*{box-sizing:border-box}
+html{font-size:18px}
+body{margin:0;min-height:100vh;color:var(--tinta);font-family:"Baloo 2","Comic Sans MS","Trebuchet MS",sans-serif;font-weight:500;
+background:linear-gradient(var(--langit) 0 70%,#9BE7B5 70%);}
+.top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;padding:.7rem 1.2rem}
+.logo{font-weight:800;font-size:1.5rem;color:var(--tinta);text-decoration:none}
+nav{display:flex;gap:.4rem}
+nav a{padding:.35rem 1rem;border-radius:99px;background:var(--putih);color:var(--tinta);text-decoration:none;font-weight:800}
+nav a.on{background:var(--tinta);color:var(--putih)}
+a:focus-visible,button:focus-visible{outline:4px solid var(--tinta);outline-offset:3px}
+.stage[hidden]{display:none}
+.stage{max-width:880px;margin:0 auto;padding:.5rem 1rem 3rem;text-align:center}
+h1{font-size:clamp(1.5rem,5vw,2.2rem);margin:.4rem 0}
+.hint{margin:.3rem 0 1rem;opacity:.8}
+.big{display:flex;align-items:center;gap:.6rem;justify-content:center}
+.big-body{flex:1;background:var(--putih);border-radius:2rem;padding:1rem 1rem 1.3rem;box-shadow:0 8px 0 rgba(31,42,90,.18);border-bottom:8px solid var(--c,#FF6B6B)}
+.numeral{font-weight:800;font-size:clamp(7rem,28vw,12rem);line-height:1;color:var(--c,#FF6B6B)}
+.numeral.pop{animation:pop .45s}
+.word{font-size:2rem;font-weight:800;margin-bottom:.4rem}
+.objects{display:flex;flex-wrap:wrap;gap:.2rem;justify-content:center;min-height:4.2rem;margin-bottom:.6rem}
+.obj{font-size:2.6rem;line-height:1;background:none;border:0;cursor:pointer;padding:.1rem;transition:transform .15s}
+.obj.tampil{animation:pop .4s backwards}
+.obj.hitung{transform:scale(1.25) rotate(-8deg);filter:drop-shadow(0 0 6px var(--matahari))}
+.btn{font:inherit;font-weight:800;font-size:1.15rem;padding:.6rem 1.5rem;border:0;border-radius:99px;background:var(--matahari);color:var(--tinta);cursor:pointer;box-shadow:0 5px 0 rgba(31,42,90,.25)}
+.btn:active,.nav-btn:active{transform:translateY(4px);box-shadow:none}
+.nav-btn{font:inherit;font-size:1.4rem;width:3.4rem;height:3.4rem;border-radius:50%;border:0;background:var(--putih);cursor:pointer;color:var(--tinta);box-shadow:0 5px 0 rgba(31,42,90,.25)}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.7rem;margin-top:1.2rem}
+.tile{font:inherit;font-weight:800;font-size:clamp(1.8rem,7vw,2.8rem);aspect-ratio:1;border:0;border-radius:1.2rem;background:var(--c);color:var(--putih);cursor:pointer;box-shadow:0 6px 0 rgba(31,42,90,.25);transition:transform .15s}
+.tile:hover{transform:translateY(-3px) rotate(-3deg)}
+.tile[aria-current=true]{outline:5px solid var(--tinta);outline-offset:2px}
+.field{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;background:var(--putih);border-radius:2rem;padding:1.2rem;min-height:9rem;box-shadow:0 8px 0 rgba(31,42,90,.18)}
+.field .obj{font-size:3.2rem}
+.options{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin:1.2rem 0 .5rem}
+.opt{font:inherit;font-weight:800;font-size:2.4rem;min-width:5rem;padding:.3rem 1rem;border:0;border-radius:1.2rem;background:var(--c);color:var(--putih);cursor:pointer;box-shadow:0 6px 0 rgba(31,42,90,.25)}
+.big-opt .opt{font-size:3.6rem;min-width:6.5rem}
+.opt.benar{outline:5px solid var(--daun);animation:pop .5s}
+.opt.salah{animation:geser .4s}
+.msg{font-size:1.5rem;font-weight:800;min-height:2.2rem;margin:.3rem 0}
+.stars{font-size:2rem;min-height:2.6rem;letter-spacing:.2rem}
+.konfeti{position:fixed;top:-2rem;font-size:2rem;pointer-events:none;animation:jatuh 1.6s ease-in forwards;z-index:9}
+@keyframes pop{0%{transform:scale(.2)}70%{transform:scale(1.2)}100%{transform:scale(1)}}
+@keyframes geser{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+@keyframes jatuh{to{transform:translateY(110vh) rotate(360deg)}}
+@media (max-width:520px){.grid{grid-template-columns:repeat(5,1fr);gap:.4rem}.nav-btn{width:2.6rem;height:2.6rem}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
